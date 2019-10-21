@@ -1,7 +1,7 @@
-require ("dotenv").config();
+require("dotenv").config();
 const express = require("express");
 const massive = require("massive");
-const controller = require("./controller");
+const Controller = require("./Controller");
 
 const app = express();
 
@@ -15,9 +15,11 @@ massive(CONNECTION_STRING)
 
   app.use(express.json());
 
-  
+  app.get('/api/inventory', Controller.getAll);
 
-const port = SERVER_PORT || 6505;
+
+
+const port = SERVER_PORT || 6505
 app.listen(port, () => {
-    console.log(`The server is listening on the super metal port ${port}.`);
+    console.log(`The server is listening on port ${port}.`);
 });
