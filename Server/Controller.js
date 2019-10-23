@@ -7,9 +7,10 @@ module.exports = {
     },
         
     create: (req, res) => {
+        console.log(req.body)
         const dbInstance = req.app.get('db');
-        const { test_name, test_price, test_image_url } = req.body
-        dbInstance.create_product([ test_name, test_price, test_image_url])
+        const { name, price, imageUrl } = req.body
+        dbInstance.create_product([ name, price, imageUrl])
         .then( () => res.sendStatus(200) )
         .catch( err => {
             res.status(500).send({errorMessage: "errorMessage: 500 for real though, this is not working correctly"});

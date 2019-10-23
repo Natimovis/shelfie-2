@@ -8,7 +8,7 @@ export class Form extends Component {
         this.state = {
             name: "",
             price: "",
-            image: "",
+            imageUrl: "",
         }
     }
 
@@ -23,18 +23,18 @@ export class Form extends Component {
     }
 
     handleImageChange = e => {
-        this.setState({ image: e.target.value })
-        console.log(this.state.image)
+        this.setState({ imageUrl: e.target.value })
+        console.log(this.state.imageUrl)
     }
 
     handleAddClick = e => {
         e.preventDefault();
-        // const {name, price, image} = this.state;
-        Axios.post('/api/product', {test_name:this.state.name, test_price:this.state.price, test_image_url:this.state.test_image_url })
+        const {name, price, imageUrl} = this.state;
+        Axios.post('/api/product', { name, price, imageUrl })
         .then(res => {
             this.props.viewInventory();
             this.handleCancelClick();
-            // console.log(res.data)
+            console.log(res.data)
         })
         .catch(error => {
             console.log(`ya so this isnt really working`)
@@ -48,7 +48,7 @@ export class Form extends Component {
         this.setState({
             name: "",
             price: "",
-            image: ""
+            imageUrl: ""
         })
         console.log(this.state)
     }
