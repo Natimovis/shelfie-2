@@ -17,6 +17,8 @@ massive(CONNECTION_STRING)
 
   app.get('/api/inventory', Controller.getAll);
 
+  app.post('/api/product', Controller.create);
+
 
 
 const port = SERVER_PORT || 6505

@@ -6,9 +6,9 @@ class Product extends Component {
         console.log(this.props.val)
         return (
             <div>
-                <div>{this.props.val.Name}</div>
-                <div>{this.props.val.Price}</div>
-                <div>{this.props.val.Image}</div>
+                <div>{this.props.val.name}</div>
+                <div>{this.props.val.price}</div>
+                <div>{this.props.val.image}</div>
             </div>
         )
     }

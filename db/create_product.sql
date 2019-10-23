@@ -1,1 +1,1 @@
-INSERT INTO test ( test_name, test_price, test_image_url ) VALUES ('Nathan ', 29, 'test image url 2');
+INSERT INTO test ( test_name, test_price, test_image_url ) VALUES ($1, $2, $3);
