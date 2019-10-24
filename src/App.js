@@ -21,7 +21,7 @@ export class App extends Component {
         Axios.get('/api/inventory')
         .then(res => {
             this.setState({ inventory: res.data })
-            // console.log(res.data)
+            console.log(res.data)
         })
     }
 
