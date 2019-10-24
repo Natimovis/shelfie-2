@@ -19,6 +19,8 @@ massive(CONNECTION_STRING)
 
   app.post('/api/product', Controller.create);
 
+  app.delete('/api/product/:id', Controller.delete);
+
 
 
 const port = SERVER_PORT || 6505

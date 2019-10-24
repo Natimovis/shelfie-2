@@ -18,4 +18,15 @@ module.exports = {
         } );
     },
 
+    delete: (req, res) => {
+        const dbInstance = req.app.get('db')
+        const { id } = req.params;
+        console.log(req.params)
+        dbInstance.delete_product(id)
+        .then(() => res.sendStatus(200))
+        .catch(err => {
+            res.status(500).send({ errorMessage: "Okay, so this is not really working"});
+            console.log(err)
+        });
+    }
 };

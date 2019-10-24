@@ -31,7 +31,7 @@ export class App extends Component {
         return (
             <div>
                 <Header />
-                <Dashboard inventory={this.state.inventory} />
+                <Dashboard viewInventory={this.viewInventory} inventory={this.state.inventory} />
                 <Form viewInventory={this.viewInventory} />
                 hello
             </div>
